@@ -8,8 +8,9 @@ public class Main {
 	// write your code here
 
              LeerFichero app = new LeerFichero();
-
-            System.out.println(app);
+             EscribirFichero p = new EscribirFichero();
+             p.AgregarDatos();
+            System.out.println(p);
             }
 
 

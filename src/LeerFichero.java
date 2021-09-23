@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 public class LeerFichero {
 
+    private ArrayList<String> nombres;
+
+
     public LeerFichero() {
 
         int contarLineas = 0;
-        FileReader archivo = null;
         BufferedReader buffe = null;
         String ruta = "c:\\Listadodenombresaleatorios.csv";
 
         try {
             buffe = new BufferedReader(new FileReader(ruta));
 
-            String lineas = "";
-            ArrayList<String>nombres = new ArrayList<String>();
+            String lineas;
+          nombres = new ArrayList<>();
 
             while ((lineas = buffe.readLine()) != null) {
 
@@ -24,10 +26,6 @@ public class LeerFichero {
              }
              contarLineas ++;
             }
-
-     // llama a metodo
-           NombresAleatorios(nombres);
-
 
 
         } catch (Exception e) {
@@ -41,24 +39,13 @@ public class LeerFichero {
         }
 
       }
-    public static int rangoAleatorio(int max, int min) {
-        int x = 0;
-        x = (int)(Math.random()* (max - min)) + min ;
-        return x;
+
+
+    public ArrayList<String> getNombres() {
+
+        return nombres;
     }
 
-    public void  NombresAleatorios(ArrayList array ) {
-        ArrayList<String> nombresAleatorios = new ArrayList<String>();
-
-        for (int i = 0; i <10 ; i++) {
-            int aleatorios = rangoAleatorio(80,1);
-
-            nombresAleatorios.add((String) array.get(aleatorios));
-        }
-
-        System.out.println(nombresAleatorios + " \n");
-
-    }
 
     }
 
