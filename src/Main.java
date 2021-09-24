@@ -9,12 +9,13 @@ public class Main {
 
              LeerFichero app = new LeerFichero();
              EscribirFichero p = new EscribirFichero();
-             p.AgregarDatos();
-            System.out.println(p);
+
+            System.out.println( p.AgregarDatos());
+
             }
 
 
-        }
+}
 
 
 
