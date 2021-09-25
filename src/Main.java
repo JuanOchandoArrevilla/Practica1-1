@@ -5,12 +5,10 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
 
-             LeerFichero app = new LeerFichero();
-             EscribirFichero p = new EscribirFichero();
+             EscribirFichero escribir = new EscribirFichero();
 
-            System.out.println( p.AgregarDatos());
+            System.out.println( escribir.AgregarDatos());
 
             }
 
