@@ -1,5 +1,7 @@
+
 import java.io.*;
 import java.util.ArrayList;
+
 
 
     public class EscribirFichero {
@@ -7,24 +9,28 @@ import java.util.ArrayList;
         // variables
         CrearFichero ruta = new CrearFichero();
         LeerFichero leer = new LeerFichero();
+        int NumNotas = 4;
+        int NumAlumno = 10;
 
     // metodos
 
     public String agregarNotas() {
-             ArrayList<Double>Notas = new ArrayList<>();
-              Double calcula = 0.0;
-               Double promedio;
-               String n;
+              ArrayList<Double>Notas = new ArrayList<>();
+               Double calcula = 0.0;
+               Double promedio ;
+               String mostrarDatos ;
 
-        for (int i = 0; i < 4; i++) {
-                Double asignaNota = Math.floor(Math.random() * (10-1) + 1) ;
+        for (int i = 0; i < NumNotas; i++) {
+
+               double asignaNota = Math.round(Math.random() * (10-1) + 1) ;
                  Notas.add(asignaNota);
-                 calcula += Notas.get(i);
+                calcula += Notas.get(i);
+
         }
 
-                    promedio = calcula / 4;
+                    promedio = calcula / NumNotas;
 
-            return n = String.valueOf(Notas) + "   " + promedio;
+            return mostrarDatos = String.valueOf(Notas) + "   " + promedio;
     }
 
 
@@ -32,21 +38,22 @@ import java.util.ArrayList;
     public String AgregarDatos() {
                 ArrayList<String> nombresAleatorios = new ArrayList<>();
                 PrintWriter pintar = null;
-                String p="Nombre " + "     " + "    Notas " + "         " + " Promedio \n ";
+                String cabezera="Nombre " + "     " + "    Notas " + "         " + " Promedio \n ";
 
         try {
                             pintar = Escribir();
                             pintar.println("Nombre " + "        Notas " + "          "   + "Promedio ");
-                        for (int i = 0; i <10 ; i++) {
-                             int aleatorios = rangoAleatorio(80,0);
+                        for (int i = 0; i <NumAlumno ; i++) {
+                              int aleatorios = rangoAleatorio(80,0);
 
-                            nombresAleatorios.add(leer.getNombres().get(aleatorios));
-                            pintar.println(nombresAleatorios.get(i) + " " +  agregarNotas());
+                                nombresAleatorios.add(leer.getNombres().get(aleatorios));
+                                pintar.println(nombresAleatorios.get(i) + " " +  agregarNotas());
 
 
-                            p +=  nombresAleatorios.get(i) + " " +  agregarNotas() + "\n";
+                                cabezera +=  nombresAleatorios.get(i) + " " +  agregarNotas() + "\n";
             }
-                        return p;
+                        return cabezera;
+
         } catch (IOException e) {
                 e.printStackTrace();
         } finally {
@@ -68,8 +75,10 @@ import java.util.ArrayList;
     }
 
     public PrintWriter Escribir() throws IOException {
-                 PrintWriter wp = new PrintWriter(new FileWriter(ruta.getPath()));
-                return wp;
+                 PrintWriter write = new PrintWriter(new FileWriter(ruta.getPath()));
+                return write;
     }
 
-}
+
+
+    }

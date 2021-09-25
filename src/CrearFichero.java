@@ -14,9 +14,9 @@ public class CrearFichero {
     public CrearFichero() {
 
           //variables
-          String nombre = JOptionPane.showInputDialog("nombre del fichero");
+          String nombreFichero = JOptionPane.showInputDialog("nombre del fichero");
           String desktop = "Juan Ochando";
-           String rutaCompleta = "C:" + File.separator + "Users" + File.separator + desktop + File.separator +  "Desktop" + File.separator + nombre + ".txt";
+           String rutaCompleta = "C:" + File.separator + "Users" + File.separator + desktop + File.separator +  "Desktop" + File.separator + nombreFichero + ".txt";
            path = new File(rutaCompleta);
 
 
